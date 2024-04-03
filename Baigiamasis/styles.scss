@@ -1,0 +1,208 @@
+@use 'css/responsive';
+
+@font-face {
+  font-family: "Quicksand", sans-serif;
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+header {
+  background-color: #000000;
+  padding: 20px;
+  top: 0;
+  position: sticky;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding-left: 30px;
+  font-family: "Quicksand", sans-serif;
+
+  & a {
+    color: white;
+    text-decoration: none;
+    transition: ease-out 100ms;
+
+    &:hover {
+      transition: ease-in 100ms;
+      font-weight: bold;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+.title {
+  padding-top: 30px;
+  font-size: 48px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+}
+
+#user-content {
+  padding-right: 10px;
+}
+
+.users-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1230px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  @include responsive.lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include responsive.md {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include responsive.sm {
+    grid-template-columns: 1fr;
+  }
+
+
+  .card {
+    padding: 10px;
+    margin: 10px;
+    background-color: #dadada4f;
+    box-shadow: 6px 6px 9px 0;
+    border-radius: 5px;
+    transition: transform ease-out 500ms;
+    font-family: "Quicksand", sans-serif;
+
+    &:hover {
+      transform: scale(1.02);
+      z-index: 9999;
+      transition: transform ease-in 50ms;
+
+      & .card-footer {
+        & a {
+          color: blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+
+  & .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .card-footer {
+    display: flex;
+    flex-direction: column;
+
+    & a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+h1#username {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  padding: 10px;
+}
+
+.user-card {
+  background-color: #e6e6e6;
+  padding: 20px;
+
+  & .card-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .card-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#user-posts {
+  margin-top: 20px;
+  font-size: 48px;
+
+}
+
+.user-posts-list {
+  display: grid;
+  font-family: "Quicksand", sans-serif;
+  @include responsive.sm {
+    grid-template-columns: 1fr;
+  }
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  & .user-post {
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+#posts-list {
+  margin-top: 30px;
+  display: grid;
+  @include responsive.sm {
+    grid-template-columns: 1fr;
+  }
+
+  @include responsive.xl {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  & .post-item {
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    box-shadow: inset 2px 2px 9px;
+    border-radius: 5px;
+    transition: box-shadow ease-out 1s;
+
+    &:hover {
+      box-shadow: 2px 2px 9px rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+.item {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  margin-top: 30px;
+  height: 50vh;
+  width: 100dvh;
+  box-shadow: inset 3px 3px 9px;
+}
